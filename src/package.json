@@ -1,0 +1,29 @@
+{
+  "name": "umoja-web-components",
+  "version": "0.8.0",
+  "description": "Sama's web component design system. Following open-wc recommendations",
+  "author": "Amy Simpson <asimpson@sama.com>",
+  "homepage": "https://aesimpson.github.io/umoja-design-system",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "keywords": [
+    "web-components",
+    "lit-element",
+    "javascript",
+    "lit"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "lit": "^2.0.0-rc.1",
+    "lit-element": "^3.0.0-rc.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aesimpson/umoja-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aesimpson/umoja-design-system/issues"
+  }
+}

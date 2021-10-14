@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "umoja-btn",
+      "description": "A button component",
+      "properties": [
+        {
+          "name": "title",
+          "type": "String",
+          "description": "The title of button",
+          "default": "Button"
+        },
+        {
+          "name": "kind",
+          "type": "String",
+          "description": "The kind of button. This determines the button's styling.",
+          "default": "primary"
+        },
+        {
+          "name": "disabled",
+          "type": "Boolean",
+          "description": "Should the button be disabled?",
+          "default": false
+        },
+        {
+          "name": "href",
+          "type": "String",
+          "description": "URL path if the button is a link.",
+          "default": ""
+        },
+        {
+          "name": "target",
+          "type": "String",
+          "description": "Link target attribute.",
+          "default": ""
+        },
+        {
+          "name": "submit",
+          "type": "Boolean",
+          "description": "Is the button's purpose to submit something?",
+          "default": false
+        },
+        {
+          "name": "download",
+          "type": "String",
+          "description": "Set if the link is to a download.",
+          "default": ""
+        }
+      ],
+      "events": [],
+      "slots": [],
+      "cssProperties": []
+    }
+  ]
+}

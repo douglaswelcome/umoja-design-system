@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="Put your description here." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background-color: #22222a;
+        font-size: 16px;
+        font-family: 'Manrope', sans-serif;
+      }
+      .container {
+        width: 1200px;
+        margin: 6rem auto;
+      }
+      section {
+        margin: 3rem 0;
+      }
+    </style>
+    <base href="/" />
+    <title>sama-umoja</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <form>
+      <section>
+        <umoja-btn icon="face"></umoja-btn>
+        <umoja-btn disabled title="Button"></umoja-btn>
+      </section>
+      <section>
+        <umoja-btn icon="face" title="Button" kind="secondary" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank"></umoja-btn>
+        <umoja-btn kind="secondary" disabled="true" title="Button"></umoja-btn>
+      </section>
+      <section>
+        <section>
+          <umoja-radio-btn-group name="group_2" umoja-radio-btn-group-change="">
+            <umoja-radio-btn label="Radio 1" name="radio_group" value="value1"></umoja-radio-btn>
+            <umoja-radio-btn label="Radio 2" name="radio_group" value="value2"></umoja-radio-btn>
+            <umoja-radio-btn label="Radio 3" name="radio_group" value="value3"></umoja-radio-btn>
+          </umoja-radio-btn-group>
+      </section>
+      <section>
+        <umoja-radio-btn-group name="group_1" theme="light" value="yes">
+          <umoja-radio-btn label="Radio 1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
+          <umoja-radio-btn label="Radio 2" value="no" img="radio-bkgr.png"></umoja-radio-btn>
+          <umoja-radio-btn label="Radio 3" value="maybe" img="radio-bkgr.png"></umoja-radio-btn>
+        </umoja-radio-btn-group>
+      </section>
+      <section>
+        <umoja-radio-btn-group name="group_3" theme="light" value="no">
+          <div>
+            <umoja-radio-btn label="Radio 1" value="yes" img="radio-bkgr.png"></umoja-radio-btn>
+          </div>
+          <div>
+            <umoja-radio-btn label="Radio 2" value="no" img="radio-bkgr.png"></umoja-radio-btn>
+          </div>
+          <div>
+            <umoja-radio-btn label="Radio 3" value="maybe" img="radio-bkgr.png"></umoja-radio-btn>
+          </div>
+        </umoja-radio-btn-group>
+      </section>
+      <input type="text" />
+      <input type="submit" />
+    </form>
+    </main>
+    <script type="module">
+      import './src/index.js';
+      document.querySelector('input[name="group_2"]').setAttribute('value', 'value3');
+    </script>
+  </body>
+</html>

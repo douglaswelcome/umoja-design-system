@@ -1,0 +1,176 @@
+@import "spacing";
+// ______________Width > could update to try these with REMs. however, in testing always using browser window width in px
+// REM size @ 16px
+// Breakpoints
+$w-xlg: 1439px; //1440 px and up
+$w-lg: 1134px; //1120px - 1439px
+$w-med: 816px; //816px - 1120px
+$w-sm: 320px; //320px - 800px
+
+// Content Widths within breakpoints, usually 1rem or 16px less than breakpoint width
+$xlg-page-width: 1312px;
+$lg-page-width: 1070px;
+$med-page-width: 800px;
+
+@mixin breakpoint($width) {
+  @if $width==w-xsm {
+    @media (max-width: $w-sm) {
+      @content;
+    }
+  }
+
+  @else if $width==w-sm {
+    @media (max-width: $w-med) {
+      @content;
+    }
+  }
+
+  @else if $width==w-med {
+    @media (max-width: $w-lg) {
+      @content;
+    }
+  }
+
+  @else if $width==w-lg {
+    @media (max-width: $w-xlg) {
+      @content;
+    }
+  }
+
+  @else if $width==w-xlg {
+    @media (min-width: $w-xlg) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: w-sm, w-med, w-lg, w-xlg";
+  }
+}
+
+//page-container widths
+ @mixin page-width {
+  width: $xlg-page-width;
+
+  @include breakpoint(w-lg) {
+    width: $lg-page-width;
+  }
+
+  @include breakpoint(w-med) {
+    width: $med-page-width;
+  }
+
+  @include breakpoint(w-sm) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: auto;
+    max-width: 40rem;
+  }
+}
+
+@mixin column-gap-12 {
+  column-gap: 2rem;
+  @include breakpoint (w-sm){
+    column-gap: 0rem;
+  }
+}
+
+@mixin column-gap-6 {
+  column-gap: 8rem;
+
+  @include breakpoint (w-med) {
+    column-gap: 4rem;
+  }
+
+  @include breakpoint (w-sm){
+    column-gap: 0rem;
+  }
+}
+
+%grid-12 {
+  @include page-width;
+  @include column-gap-12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-self: center;
+}
+
+%grid-6 {
+  @include page-width;
+  @include column-gap-6;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-self: center;
+}
+
+%grid-section {
+  $center-width: $xlg-page-width;
+  @include breakpoint(w-lg) {
+    $center-width: $lg-page-width;
+  }
+
+  @include breakpoint(w-med) {
+    $center-width: $med-page-width;
+  }
+
+  @include breakpoint(w-sm) {
+    $center-width: calc(100% - 2rem);
+  }
+
+  display: grid;
+  grid-template-columns: 1fr $center-width 1fr;
+}
+
+/* utility classnames */
+.umoja-l-page-width {
+  @include page-width;
+}
+
+.umoja-l-grid-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: $space-lg;
+  padding-bottom: $space-lg;
+  position: relative;
+
+  &:first-of-type{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  > *{
+    margin-bottom: $space-md;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.umoja-l-grid--12 {
+  @extend %grid-12;
+}
+
+.umoja-l-grid--6 {
+  @extend %grid-6;
+}
+
+.umoja-l-grid-gap--row-1{
+  grid-row-gap: $space-sm;
+}
+
+.umoja-l-grid-gap--row-2{
+  grid-row-gap: $space-md;
+}
+
+.umoja-l-grid-gap--row-3{
+  grid-row-gap: $space-lg;
+}
+
+.umoja-l-grid-align--center{
+  align-items: center;
+}
+
+.umoja-l-grid-align--base{
+  align-items: baseline;
+}

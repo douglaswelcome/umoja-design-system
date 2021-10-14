@@ -1,0 +1,23 @@
+{
+  "name": "umoja-foundations",
+  "version": "1.2.1",
+  "description": "Sama's design system foundations",
+  "author": "Amy Simpson <asimpson@sama.com>",
+  "homepage": "https://aesimpson.github.io/umoja-design-system",
+  "license": "MIT",
+  "keywords": [
+    "umoja"
+  ],
+  "files": [
+    "*.scss"
+  ],
+  "scripts": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aesimpson/umoja-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aesimpson/umoja-design-system/issues"
+  }
+}
