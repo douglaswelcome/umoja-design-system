@@ -1,10 +1,10 @@
 import {html} from 'lit-html';
-import ifExists from '../src/utils/if-exists';
+import ifExists from '/src/utils/if-exists';
 
-import '../src/components/button/button.js';
+import '/src/components/app/button/button.js';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/App/Button',
   component: 'umoja-btn',
   parameters: {
     docs: {

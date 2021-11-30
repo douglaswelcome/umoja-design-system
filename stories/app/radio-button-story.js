@@ -1,8 +1,8 @@
 import {html} from 'lit-html';
-import '../src/components/radio-button/radio-button.js';
+import '/src/components/app/radio-button/radio-button.js';
 
 export default {
-  title: 'Components/Radio Button',
+  title: 'Components/App/Radio Button',
   component: 'umoja-radio-btn',
   parameters: {
     docs: {

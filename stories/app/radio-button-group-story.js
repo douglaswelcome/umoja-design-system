@@ -1,12 +1,12 @@
 import {html} from 'lit-html';
-import ifExists from '../src/utils/if-exists';
+import ifExists from '/src/utils/if-exists';
 import {Default, Image} from './radio-button-story.js'
 
-import '../src/components/radio-button/radio-button.js';
-import '../src/components/radio-button-group/radio-button-group.js';
+import '/src/components/app/radio-button/radio-button.js';
+import '/src/components/app/radio-button-group/radio-button-group.js';
 
 export default {
-    title: 'Components/Radio Button Group',
+    title: 'Components/App/Radio Button Group',
     component: 'umoja-radio-btn-group',
     parameters: {
         actions: { argTypesRegex: '^on.*' },
