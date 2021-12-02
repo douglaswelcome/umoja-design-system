@@ -6,11 +6,7 @@ export class UmojaCWebTextfield extends LitElement {
     name: {},
   };
   // Define scoped styles right with your component, in plain CSS
-  static styles = css`
-    :host {
-      color: blue;
-    }
-  `;
+
 
   constructor() {
     super();
