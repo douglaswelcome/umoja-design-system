@@ -19,6 +19,8 @@ export default css`
     --color-purple3: #a378e9;
     --color-purple4: #c9aef5;
     --color-purple5: #e9dcfd;
+    --color-sunshine: #fffa0c;
+    --color-white:#fff;
   }
 
   :host *,
