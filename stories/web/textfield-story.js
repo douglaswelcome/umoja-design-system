@@ -7,11 +7,12 @@ export default {
 
 }
 
-  const Template = ({ label, placeholder, value }) =>
+  const Template = ({ label, value, name }) =>
   html`
     <umoja-c-web-textfield 
     label=${label} 
     value=${value}
+    name=${name}
     >
     </umoja-c-web-textfield>
   `;
@@ -19,6 +20,7 @@ export default {
   export const Default = Template.bind({});
 
   Default.args = {
+    name: 'Text Field',
     label: 'First Name',
     value: ''
   };

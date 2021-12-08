@@ -5,9 +5,9 @@ import globalCSS from '../../../styles/global-styles.js';
 export default css`
   ${globalCSS}
 
-    :host{
-      width:100%;
-    }
+  :host{
+    width:100%;
+  }
 
     .__wrap {
     position: relative;
@@ -27,8 +27,8 @@ export default css`
     transform-origin: left top;
     pointer-events: none;
     }
-    
-    input {
+
+    textarea {
     font-size: 1rem;
     outline: none;
     border: 1px solid;
@@ -45,26 +45,26 @@ export default css`
     padding: 1.75rem 0.5rem 1rem;
     }
 
-    input:hover + label, .hover + label {
+    textarea:hover + label, .hover + label {
       color:  var(--color-charcoal7);
     }
 
-    input:focus{
+    textarea:focus{
     border-color:var(--color-sunshine);
     }
-    input:focus + label, .filled + label
+    textarea:focus > label, .filled + label
     {
       color:  var(--color-charcoal5);
       transform: translateY(-95%) scale(0.7);
     
     }
 
-    input:not(:placeholder-shown) + label {
+    textarea:not(:placeholder-shown) + label {
 
     }
 
    
-    input:disabled,  input:disabled ~ .label {
+    textarea:disabled,  input:disabled ~ .label {
     opacity: 0.5;
     }
 

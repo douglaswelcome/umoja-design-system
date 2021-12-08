@@ -2,12 +2,12 @@ import {
   LitElement,
   html
 } from 'lit';
-import styles from './textfield.styles';
+import styles from './textfarea.styles';
 import {
   classMap
 } from 'lit/directives/class-map.js';
 
-export default class UmojaCWebTextfield extends LitElement {
+export default class UmojaCWebTextarea extends LitElement {
   static get styles() {
     return [styles];
   }
@@ -35,7 +35,12 @@ export default class UmojaCWebTextfield extends LitElement {
       },
       placeholder: {
         type: String,
-
+      },
+      rows: {
+        type: Number,
+      },
+      cols: {
+        type: Number,
       },
       classes: {}
 
@@ -57,6 +62,8 @@ export default class UmojaCWebTextfield extends LitElement {
       hover: false,
       filled: false
     };
+    this.rows = 3
+    this.cols = 35
 
     this.addEventListener('blur', this.inputFilled);
 
@@ -67,7 +74,9 @@ export default class UmojaCWebTextfield extends LitElement {
   render() {
     return html `
     <div class="__wrap">
-    <input
+    
+    <label for=${this.name}>${this.label}</label>
+    <textarea
       class=${classMap(this.classes)}
       @input=${this.inputHandler}
       type=${this.type}
@@ -76,10 +85,16 @@ export default class UmojaCWebTextfield extends LitElement {
       placeholder="${this.placeholder}"
       .value=${this.value}
       ?disabled="${this.disabled}"
+      cols="${this.cols}"
+      rows="${this.rows}"
    
       
-    />
-    <label for=${this.name}>${this.label}</label>
+    >
+    ${this.value}
+    </textarea>
+
+
+    
     </div>
     `;
   }
@@ -104,4 +119,4 @@ export default class UmojaCWebTextfield extends LitElement {
     );
   }
 }
-customElements.define('umoja-c-web-textfield', UmojaCWebTextfield);
+customElements.define('umoja-c-web-textarea', UmojaCWebTextarea);
