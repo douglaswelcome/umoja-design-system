@@ -34,7 +34,7 @@ export default class UmojaCWebTextfield extends LitElement {
         type: String,
 
       },
-      classes: {},
+      classes: {}
 
     };
   }
