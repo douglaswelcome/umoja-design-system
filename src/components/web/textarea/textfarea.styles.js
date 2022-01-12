@@ -18,7 +18,7 @@ export default css`
     position: absolute;
     font-size: 1rem;
     left: 0;
-    top: 50%;
+    top: 1.25rem;
     background-color:var(--color-charcoal0);
     transform: translateY(-50%);
     color:var(--color-charcoal5);
@@ -42,7 +42,7 @@ export default css`
     margin-left: auto;
     width: 100%;
     margin-right: auto;
-    padding: 1.75rem 0.5rem 1rem;
+    padding: 2rem 0.5rem 1rem;
     }
 
     textarea:hover + label, .hover + label {
@@ -52,10 +52,10 @@ export default css`
     textarea:focus{
     border-color:var(--color-sunshine);
     }
-    textarea:focus > label, .filled + label
+    .filled > label
     {
       color:  var(--color-charcoal5);
-      transform: translateY(-95%) scale(0.7);
+      transform: translateY(-55%) scale(0.7);
     
     }
 

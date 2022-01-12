@@ -65,7 +65,8 @@ export default class UmojaCWebTextarea extends LitElement {
     this.rows = 3
     this.cols = 35
 
-    this.addEventListener('blur', this.inputFilled);
+    this.addEventListener('blur', this.areaFilled);
+    this.addEventListener('focus', this.areaFocused);
 
   }
 
@@ -88,7 +89,6 @@ export default class UmojaCWebTextarea extends LitElement {
       cols="${this.cols}"
       rows="${this.rows}"
    
-      
     >
     ${this.value}
     </textarea>
@@ -99,13 +99,25 @@ export default class UmojaCWebTextarea extends LitElement {
     `;
   }
 
-  inputFilled (e) {
-    let input = this.shadowRoot.querySelector('input');
-    
-    if (input.value) {
-      input.classList.add("filled") 
+  areaFocused (e) {
+    let wrap = this.shadowRoot.querySelector('.__wrap');
+
+    if (document.activeElement === this) {
+      wrap.classList.add("filled");
     } else {
-      input.classList.remove("filled") 
+      wrap.classList.remove("filled");
+    }
+  }
+
+
+  areaFilled (e) {
+    let textarea = this.shadowRoot.querySelector('textarea');
+    let wrap = this.shadowRoot.querySelector('.__wrap');
+    
+    if (textarea.value) {
+      wrap.classList.add("filled") 
+    } else {
+      wrap.classList.remove("filled") 
     }
   }
 
