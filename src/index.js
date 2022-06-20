@@ -1,3 +1,3 @@
-export {default as UmojaButton} from './components/button/button.js';
-export {default as UmojaRadioButton} from './components/radio-button/radio-button.js';
-export {default as UmojaRadioButtonGroup} from './components/radio-button-group/radio-button-group.js';
+export {default as UmojaWebTextfield } from '/src/components/web/textfield/textfield.js';
+export {default as UmojaWebCheckbox } from '/src/components/web/checkbox/checkbox.js';
+export {default as UmojaWebTextarea } from '/src/components/web/textarea/textarea.js';

@@ -65,3 +65,9 @@ export const parameters = {
 export const decorators = [
   (story) => html`<style>${canvasStyles}</style><div class="main-content">${story()}</div>`,
 ];
+
+import { addons } from '@storybook/addons';
+
+addons.setConfig({
+  enableShortcuts: false
+});
